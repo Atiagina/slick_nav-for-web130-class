@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 87.5%;
+    width: 96%;
+    background-color: white;
+    margin: 15px auto;
+    padding: 20px;
+}
+
+#nav-menu ul {
+    list-style: none;
+    position: relative; /* so that the first submenu can be positioned within the main menu */
+    
+}
+
+#nav-menu ul li {
+    float: left;
+}
+
+#nav-menu ul ul {
+    display: none; /*don't display submenu until hovered */
+    position: absolute;
+    top: 100%; /*position of submenu at bottom of main menu */
+    
+}
+
+#nav-menu ul ul li {
+    float: none; /* display the submenu vertically */
+    position: relative; /*so that second submenu can be positioned within the first submenu */
+    
+}
+
+#nav-menu ul ul li ul {
+    position: absolute;
+    left: -100%; /*position the second submenu at the left of list item */
+    top: 0; /*position the second submenu at the top of list item */
+    
+}
+
+#nav-menu ul li:hover >ul {
+    display: block; /* display the submenu on hover of the li element */
+    
+}
+
+#nav-menu ul:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* styles for the formatting of the nav menu */
+ 
+#nav-menu ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-menu ul li {
+    width: 25%;
+    
+}
+
+#nav-menu ul li a {
+    text-align: center;
+    display: block;
+    padding: 1em 0;
+    text-decoration: none;
+    background-color: bisque;
+    color: white;
+    font-weight: bold;
+}
+
+#nav-menu ul li a.current {
+    
+    color: black;
+}
+
+#nav-menu ul li a:hover,
+#nav-menu ul li a:focus {
+    
+    background-color: burlywood;
+}
+
+#nav-menu ul li:hover ul {
+    width: 100%;
+}
+
+#nav-menu ul li:hover ul li a {
+    display: block;
+    width: 178px;
+    text-align: center;
+}
+
+.slicknav_menu {
+    display: none;
+}
+
+/*media queries */
+
+@media only screen and (max-width: 959px){
+    #nav-menu ul li a{
+        font-size: .875em;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    #nav-menu {
+        display: none;
+    }
+    
+    .slicknav_menu {
+        display: block;
+    }
+}
